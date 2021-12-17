@@ -1,0 +1,19 @@
+a = 2
+b = 3;
+c = 1.234;
+{
+  m = a + b;
+  n = a - b;
+  o = a * b;
+  p = a / b;
+  q = a == b;
+  r = a > b;
+}
+if(p == q) {
+  s = 1;
+} else {
+  s = 0;
+}
+while(p==q) {
+  s = 1;
+}
