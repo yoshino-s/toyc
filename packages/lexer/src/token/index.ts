@@ -6,7 +6,7 @@ import KeywordToken from "./keyword.token";
 import NumberToken from "./number.token";
 import OperatorToken from "./operator.token";
 
-export default {
+export {
   CommentToken,
   DelimiterToken,
   EmptyToken,

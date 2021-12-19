@@ -5,8 +5,9 @@ export class LexerError extends Error {
   constructor(reason: string, context: LexerContext) {
     super();
     this.reason = reason;
-    this.message = `${this.message}
-${this.reason} At ${context.name}[${context.column}:${context.row}]
+    this.message = `${this.reason} At ${context.name}[${context.column}:${
+      context.row
+    }]
 ${context.currentLine}
 ${"^".padStart(context.column + 1, " ")}`;
   }

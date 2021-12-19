@@ -14,7 +14,9 @@ export const expectLexTo = <T extends Token>(
 ) => {
   const lexer = new Lexer();
   lexer.addToken(expected);
-  const tokens = lexer.lex(input, "<input>", true);
+  const tokens = lexer.lex(input, {
+    keepIgnoredTokens: true,
+  }).tokens;
   expect(tokens[0]).toBeInstanceOf(expected);
   cb?.(tokens[0] as T);
 };
@@ -32,7 +34,9 @@ export const expectLexToError = <T extends Token>(
   lexer.addToken(expected);
   expect(() => {
     try {
-      lexer.lex(input, "<input>", true);
+      lexer.lex(input, {
+        keepIgnoredTokens: true,
+      }).tokens;
     } catch (e) {
       expect(LexerError).toBeInstanceOf(LexerError);
       cb?.(e as LexerError);

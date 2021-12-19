@@ -1,9 +1,14 @@
+import "reflect-metadata";
+
 import { LexerError } from "../error";
 import Token, { TokenFrom } from "../token/abstract.token";
 
 import LexerContext from "./LexerContext";
+import LexerResult, { LexerResultOptions } from "./LexerResult";
 
-import "reflect-metadata";
+export interface LexerOptions {
+  name?: string;
+}
 
 export default class Lexer {
   tokens: { rule: RegExp; from: TokenFrom; privilege: number }[] = [];
@@ -11,16 +16,15 @@ export default class Lexer {
     this.tokens.push(token);
     this.tokens.sort((a, b) => b.privilege - a.privilege);
   }
-  public lex(input: string, name = "<input>", keepIgnore = false): Token[] {
-    const context = new LexerContext(this, input, name);
+  public lex(
+    input: string,
+    options?: LexerResultOptions & LexerOptions
+  ): LexerResult {
+    const context = new LexerContext(this, input, options?.name);
     while (context.index < input.length) {
       this.scan(context);
     }
-    if (keepIgnore) {
-      return context.tokens;
-    } else {
-      return context.tokens.filter((token) => !token.ignore);
-    }
+    return new LexerResult(context, options);
   }
   private scan(context: LexerContext): Token {
     const index = context.index;

@@ -3,6 +3,7 @@
   "packageManager": "yarn@3.1.0",
   "main": "dist/index.js",
   "scripts": {
+    "lint": "eslint --ext .ts src",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -38,7 +39,7 @@
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
+      "^.+\\.ts$": "ts-jest"
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s"
@@ -48,6 +49,7 @@
   },
   "dependencies": {
     "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "winston": "^3.3.3"
   }
 }

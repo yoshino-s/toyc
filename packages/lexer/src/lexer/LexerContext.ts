@@ -11,7 +11,7 @@ export default class LexerContext {
   constructor(
     public readonly lexer: Lexer,
     public readonly input: string,
-    public readonly name: string
+    public readonly name: string = "<input>"
   ) {
     this.lines = input.split("\n");
   }

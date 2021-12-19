@@ -21,7 +21,7 @@ describe("Lexer", () => {
 
     const example = `a = 1; b = 2.444; c = 3e99; ;
 if(a+b==c)then{d}`;
-    const result = lexer.lex(example);
+    const result = lexer.lex(example).tokens;
     expect(result).toEqual([
       new IdentifierToken("a"),
       new OperatorToken("="),
