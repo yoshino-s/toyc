@@ -49,7 +49,7 @@ export default class ParserContext {
     if (isUnterminatedSymbol(top)) {
       const rule = this.parser.parseTable.get(`${top}-${String(symbol)}`);
       if (!rule) {
-        throw new ParserError(`Cannot expand ${top} on ${token.type}`);
+        throw new ParserError(`Cannot expand ${top} on ${token.type}`, this);
       }
       this.pop();
       if (rule[0] !== epsilon) {

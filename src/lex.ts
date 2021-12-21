@@ -13,8 +13,12 @@ const lexer = new Lexer();
 
 Object.values(Tokens).forEach((token) => lexer.addToken(token));
 
-const result = lexer.lex(input, { name: process.argv[2] });
-
-result.tokens.forEach((token) => {
-  console.log(token.toQuadraple());
-});
+try {
+  const result = lexer.lex(input, { name: process.argv[2] });
+  result.tokens.forEach((token) => {
+    console.log(token.toQuadraple());
+  });
+} catch (e) {
+  console.error(e);
+  process.exit(1);
+}

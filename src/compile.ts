@@ -21,8 +21,13 @@ const compiler = new Compiler();
 const compile = (input: string) =>
   compiler.compileProgram(parser.parse(lexer.lex(input)).root as ProgramNode);
 
-const result = compile(input);
+try {
+  const result = compile(input);
 
-for (const i in result) {
-  console.log(i.toString());
+  for (const i in result) {
+    console.log(i.toString());
+  }
+} catch (e) {
+  console.error(e);
+  process.exit(1);
 }

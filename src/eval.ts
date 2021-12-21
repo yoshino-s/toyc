@@ -19,10 +19,21 @@ const parser = new Parser([...Object.values(Rules)], Rules.ProgramRule);
 const evaluator = new Evaluator();
 
 const evaluate = (input: string) =>
-  evaluator.eval(parser.parse(lexer.lex(input)));
+  evaluator.eval(
+    parser.parse(
+      lexer.lex(input, {
+        name: process.argv[2],
+      })
+    )
+  );
 
-const result = evaluate(input);
+try {
+  const result = evaluate(input);
 
-for (const i in result) {
-  console.log(`${i}: ${result[i].value}`);
+  for (const i in result) {
+    console.log(`${i}: ${result[i].value}`);
+  }
+} catch (e) {
+  console.error(e);
+  process.exit(1);
 }

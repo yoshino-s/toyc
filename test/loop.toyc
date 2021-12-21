@@ -1,0 +1,10 @@
+int a = 100; int result = 0; real r = 6.666; real result2 = 1.0;
+{
+  while(a > 0) {
+    result = result + a;
+    a = a-1;
+    result2 = result2 - r;
+    r = r + 0.5;
+  }
+}
+// output result = 5050

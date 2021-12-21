@@ -73,6 +73,9 @@ export default class EvalContext {
       throw new EvaluatorError(`Variable ${id} is not defined`, this);
     }
     if (variable.type === NumberType.INTEGER) {
+      if (value > 2 ** 31 - 1 || value < -(2 ** 31)) {
+        throw new EvaluatorError("Integer overflow", this);
+      }
       this.variableTable[id].value = Math.round(value);
     } else {
       this.variableTable[id].value = value;

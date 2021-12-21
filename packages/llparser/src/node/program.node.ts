@@ -35,7 +35,7 @@ export class ProgramNode {
         value instanceof NumberToken
       ) {
         this.identifierTable[identifier.identifier] = {
-          type: type.keyword as any as NumberType,
+          type: value.numberType,
           value: value.number,
         };
       }
