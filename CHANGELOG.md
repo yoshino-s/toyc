@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [1.0.0](https://github.com/Yoshino-s/toyc/compare/v0.0.3...v1.0.0) (2021-12-21)
+
+
+### Features
+
+* **error:** polish error reporting ([d073689](https://github.com/Yoshino-s/toyc/commit/d07368938984a83a9dfed49f99b90069debe7e50))
+* **readme:** add readme ([419de67](https://github.com/Yoshino-s/toyc/commit/419de678212dc53227b46e480611c514c28a477f))
+
+
+### Bug Fixes
+
+* **clean:** remove buildinfo ([d5c59f0](https://github.com/Yoshino-s/toyc/commit/d5c59f023f6f13b95f01ccd9a90b4b8e94195ce1))
+
 ### [0.0.3](https://github.com/Yoshino-s/toyc/compare/v0.0.2...v0.0.3) (2021-12-19)
 
 
