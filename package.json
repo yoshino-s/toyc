@@ -62,5 +62,10 @@
     "hooks": {
       "commit-msg": "yarn lint && commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "evaluator": "workspace:^",
+    "lexer": "workspace:^",
+    "llparser": "workspace:^"
   }
 }

@@ -48,8 +48,8 @@
     "testEnvironment": "node"
   },
   "dependencies": {
+    "lexer": "workspace:^",
     "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2",
-    "winston": "^3.3.3"
+    "rimraf": "^3.0.2"
   }
 }
